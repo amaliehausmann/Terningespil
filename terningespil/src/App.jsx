@@ -1,11 +1,9 @@
-import './App.scss'
+import "./App.scss";
 
 function App() {
-
-  return (
-    <>
-    </>
-  )
+  return <>
+  
+  </>;
 }
 
-export default App
+export default App;
