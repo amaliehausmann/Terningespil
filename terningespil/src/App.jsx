@@ -1,11 +1,14 @@
 import "./App.scss";
+import { Modal } from "./components/Modal/Modal";
+import { useState } from "react";
+import { Button } from "./components/Buttons/Button";
 
 function App() {
-  // Modal function
-    const [isModalOpen, setIsModalOpen] = useState(true);
-    const closeModal = () => setIsModalOpen(false);
-  
-  return <></>;
+
+  return (
+    <>
+    </>
+  );
 }
 
 export default App;

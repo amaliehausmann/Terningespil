@@ -1,0 +1,10 @@
+// Function to close and open the rule Modal. Requieres a button and a modal to work
+const [isModalOpen, setIsModalOpen] = useState(true);
+
+function closeModal() {
+  setIsModalOpen(false);
+}
+
+function openModal() {
+  setIsModalOpen(true);
+}
