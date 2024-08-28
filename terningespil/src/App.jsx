@@ -7,7 +7,6 @@ function App() {
    <>
     <Modal isOpen={isModalOpen} onClose={closeModal}>
             <h2>Velkommen til TerningSpillet!</h2>
-            <p>Dette er en popup modal. Klik på X for at lukke den.</p>
         </Modal>
    </>;
 }
