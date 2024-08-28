@@ -1,6 +1,6 @@
 import styles from '../Header/Header.module.scss';
 
-function Header({ title }) {
+export function Header({ title }) {
   return (
     <div className={styles.header}>
       <h1>{title}</h1>
@@ -8,4 +8,3 @@ function Header({ title }) {
   );
 }
 
-export default Header;

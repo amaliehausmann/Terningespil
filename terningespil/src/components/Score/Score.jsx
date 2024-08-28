@@ -1,6 +1,6 @@
 import styles from '../Score/Score.module.scss';
 
-function Score({ label, score }) {
+export function Score({ label, score }) {
   return (
     <div className={styles.score}>
       <span>{label}: {score}</span>
@@ -8,4 +8,4 @@ function Score({ label, score }) {
   );
 }
 
-export default Score;
+
