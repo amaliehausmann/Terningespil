@@ -1,4 +1,4 @@
-import styles from '../Header/Header.module.scss';
+import styles from "../Header/Header.module.scss";
 
 export function Header({ title }) {
   return (
@@ -7,4 +7,3 @@ export function Header({ title }) {
     </div>
   );
 }
-
