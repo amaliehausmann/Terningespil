@@ -1,0 +1,14 @@
+@import "./animation.scss";
+@mixin Button {
+    padding: 15px 42px 15px 42px;
+    background-color: rgb(20, 183, 195);
+    color: rgb(237, 231, 231);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        color: white;
+        animation: boxShad 1s;
+
+    }
+}

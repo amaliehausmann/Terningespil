@@ -1,0 +1,4 @@
+@import "./../../helper/mixin.scss";
+.Higher{
+   @include Button;
+}
