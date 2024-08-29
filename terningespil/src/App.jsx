@@ -5,6 +5,7 @@ import './App.scss';
 
 function App() {
     const [isModalOpen, setIsModalOpen] = useState(true);
+    const [isWinner, setIsWinner] = useState(true);
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
@@ -15,6 +16,8 @@ function App() {
                 isOpen={isModalOpen} 
                 onClose={handleCloseModal} 
                 winnerMessage="Player Wins!" 
+                loserMessage="You Lose!"
+                isWinner={isWinner}
             />
         </>
     );
