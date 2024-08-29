@@ -1,14 +1,21 @@
 import "./App.scss";
-import { Modal } from "./components/Modal/Modal";
-import { useState } from "react";
-import { Button } from "./components/Buttons/Button";
-
+import React, { useState } from 'react';
+import { WinFunction } from "./components/WinModel/WinFunctionl";
 function App() {
+    const [playerScore, setPlayerScore] = useState(0);
+    const [dealerScore, setDealerScore] = useState(0);
 
-  return (
-    <>
-    </>
-  );
+    return (
+        <>
+            <WinFunction
+                playerScore={playerScore}
+                dealerScore={dealerScore}
+                setPlayerScore={setPlayerScore}
+                setDealerScore={setDealerScore}
+            />
+          
+        </>
+    );
 }
 
 export default App;
