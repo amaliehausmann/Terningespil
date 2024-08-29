@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {CustomModal} from './CustomModal';
 
+
 export function WinFunction({ playerScore, dealerScore, setPlayerScore, setDealerScore }) {
     const [winnerMessage, setWinnerMessage] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);

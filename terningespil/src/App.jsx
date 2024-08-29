@@ -1,19 +1,21 @@
-import "./App.scss";
 import React, { useState } from 'react';
-import { WinFunction } from "./components/WinModel/WinFunctionl";
+import CustomModal from './components/WinModel/CustomModal';
+import './App.scss'; 
+
+
 function App() {
-    const [playerScore, setPlayerScore] = useState(0);
-    const [dealerScore, setDealerScore] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(true);
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <>
-            <WinFunction
-                playerScore={playerScore}
-                dealerScore={dealerScore}
-                setPlayerScore={setPlayerScore}
-                setDealerScore={setDealerScore}
+            <CustomModal 
+                isOpen={isModalOpen} 
+                onClose={handleCloseModal} 
+                winnerMessage="Player Wins!" 
             />
-          
         </>
     );
 }
