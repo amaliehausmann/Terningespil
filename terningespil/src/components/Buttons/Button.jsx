@@ -11,7 +11,7 @@ export function Button({
     <>
       <button
         onClick={action}
-        className={`${buttonStyle} ${isSelected ? style.selected : ""}`}
+        className={`${style[buttonStyle]} ${isSelected ? style.selected : ""}`}
         disabled={isDisabled}
       >
         {buttonTitle}
