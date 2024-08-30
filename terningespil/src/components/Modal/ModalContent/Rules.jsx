@@ -11,7 +11,7 @@ export function Rules() {
         <p>
           Tony ruller terningen mellem sine fingre og sender dig et iskoldt
           blik. "En sidste omgang," siger han. "Vind, og din gæld forsvinder.
-          Tab, og du og din familie gør det."
+          Tab, og du og din familie gør."
         </p>
         <p>
           Med hver terningekast hænger dit liv i en tynd tråd. Skæbnen afgøres
