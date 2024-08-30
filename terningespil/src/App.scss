@@ -3,4 +3,18 @@ body {
   background-image:url('../src/assets/background.webp');
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+
+  
+.scoreDisplay{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 3%;
+  width: 100%;
 }
+
+
+}
+
+

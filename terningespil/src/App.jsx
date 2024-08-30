@@ -5,6 +5,7 @@ import { Button } from "./components/Buttons/Button";
 import { Dice } from "./components/Dice/Dice";
 import { Header } from "./components/Header/Header";
 import { Score } from "./components/Score/Score";
+import { Rules } from "./components/Modal/ModalContent/rules";
 
 function App() {
   // Modal function
@@ -50,12 +51,14 @@ function App() {
 
   return (
     <>
-      <Header title="Spil title"></Header>
+      <Header title="Mafia Dice Duel"></Header>
+      <div className="scoreDisplay">
       <Score label="Player" score={playerScore}></Score>
       <Score label="Dealer" score={dealerScore}></Score>
-      <Button action={openModal} buttonStyle="" buttonTitle="?"></Button>
+      </div>
+      <Button action={openModal} buttonStyle="helpButton" buttonTitle="?"></Button>
       {isModalOpen && (
-        <Modal title="spil regler" closeModal={closeModal}></Modal>
+        <Modal title="spil regler" closeModal={closeModal}> <Rules></Rules></Modal>
       )}
 
       <Dice diceValue={diceValue1}></Dice>
