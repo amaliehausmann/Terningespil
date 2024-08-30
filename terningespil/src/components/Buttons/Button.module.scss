@@ -12,11 +12,16 @@
 }
 
 .rollDice{
-  background-color: red;
-}
-
-.selected{
-  border: 10px red solid;
+  @extend .awakening;
+  font-size: 2vw;
+  padding: 1vw 4vw;
+color: white;
+  border-radius: 10px;
+  border: none;
+  margin: auto;
+  display: block;
+  background-color: rgb(181, 0, 0);
+  margin-top: 3vw
 }
 
 .helpButton{
@@ -31,4 +36,42 @@
   border: white solid 4px;
   width: 4vw;
   height: 4.5vw;
+}
+
+.lower{
+  @extend .awakening;
+  font-size: 2.5vw;
+  margin: 0 2vw;
+  margin-top: -4vw;
+  padding: 0.5vw 2vw;
+  color: rgb(177, 5, 5);
+  border-radius: 10px;
+  border: none;
+}
+
+.equal{
+  @extend .awakening;
+  font-size: 2.5vw;
+  margin: 0 2vw;
+  margin-top: -4vw;
+  padding: 0.5vw 2vw;
+  color: rgb(177, 5, 5);
+  border-radius: 10px;
+  border: none;
+}
+
+.higher{
+  @extend .awakening;
+  font-size: 2.5vw;
+  margin: 0 2vw;
+  margin-top: -4vw;
+  padding: 0.5vw 2vw;
+  color: rgb(177, 5, 5);
+  border-radius: 10px;
+  border: none;
+}
+
+.selected{
+  background-color: rgb(153, 6, 6);
+  color: white;
 }

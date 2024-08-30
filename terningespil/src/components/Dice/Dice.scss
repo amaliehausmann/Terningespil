@@ -12,9 +12,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  margin-bottom: 20px;
   padding: 20px;
-  box-shadow: 3px 3px 5px 6px #313131;
+  box-shadow: 3px 3px 5px 6px #000000;
+  margin: auto;
+  margin-top: 1vw;
 }
 
 .diceStyle {

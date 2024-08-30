@@ -6,6 +6,7 @@ import { Dice } from "./components/Dice/Dice";
 import { Header } from "./components/Header/Header";
 import { Score } from "./components/Score/Score";
 import { Rules } from "./components/Modal/ModalContent/rules";
+import { EndMessage } from "./components/Modal/ModalContent/EndMessage";
 
 function App() {
   // Modal function
@@ -40,28 +41,35 @@ function App() {
 
     if (
       (selectedButton === "button1" && newValue2 < newValue1) ||
-      (selectedButton === "button2" && newValue2 === newValue1) ||
       (selectedButton === "button3" && newValue2 > newValue1)
     ) {
       setPlayerScore((prevScore) => prevScore + 1);
+    }
+    if (selectedButton === "button2" && newValue2 === newValue1) {
+      setPlayerScore((prevScore) => prevScore + 2);
     } else {
       setDealerScore((prevScore) => prevScore + 1);
     }
   }
 
   // Win function
-  const [endGameMsg, setEndGameMsg] = useState('');
+  const [endGameMsg, setEndGameMsg] = useState("");
   const [isEndModalOpen, setIsEndModalOpen] = useState(false);
+  const [loseWinMsg, setLoseWinMsg] = useState("");
 
-
-
-  function checkWinner(){
-    if(playerScore >=5) {
+  function checkWinner() {
+    if (playerScore >= 8) {
       setIsEndModalOpen(true);
-      setEndGameMsg('You win!');
-    } else if(dealerScore >= 5){
-      setEndGameMsg('You lose!');
+      setEndGameMsg("Du Overlevede!");
+      setLoseWinMsg(
+        "Du vandt over Mafiabossen! Han sletter din gæld og du får lov at overleve!"
+      );
+    } else if (dealerScore >= 8) {
+      setEndGameMsg("Huset vinder altid...");
       setIsEndModalOpen(true);
+      setLoseWinMsg(
+        "Du blev skudt! Du tabte til Mafiabossen og han dræbte dig og hele din familie."
+      );
     }
   }
 
@@ -69,9 +77,8 @@ function App() {
     checkWinner();
   }, [playerScore, dealerScore]);
 
-
   // reset game
-  function resetGame(){
+  function resetGame() {
     setPlayerScore(0);
     setDealerScore(0);
     setIsEndModalOpen(false);
@@ -81,39 +88,61 @@ function App() {
     <>
       <Header title="Mafia Dice Duel"></Header>
       <div className="scoreDisplay">
-      <Score label="Player" score={playerScore}></Score>
-      <Score label="Dealer" score={dealerScore}></Score>
+        <Score label="Player" score={playerScore}></Score>
+        <Score label="Mafia Boss" score={dealerScore}></Score>
       </div>
-      <Button action={openModal} buttonStyle="helpButton" buttonTitle="?"></Button>
+      <Button
+        action={openModal}
+        buttonStyle="helpButton"
+        buttonTitle="?"
+      ></Button>
       {isModalOpen && (
-        <Modal title="spil regler" closeModal={closeModal}> <Rules></Rules></Modal>
+        <Modal
+          title="spil regler"
+          closeModal={closeModal}
+          modalStyle="ruleModal"
+          buttonName="X"
+        >
+          <Rules></Rules>
+        </Modal>
       )}
 
       {isEndModalOpen && (
-        <Modal modalStyle='modal' title={endGameMsg} closeModal={resetGame}></Modal>
+        <Modal
+          modalStyle="endGame"
+          title={endGameMsg}
+          closeModal={resetGame}
+          buttonName="Play Again"
+        >
+          {" "}
+          <EndMessage msg={loseWinMsg}></EndMessage>
+        </Modal>
       )}
 
-      <Dice diceValue={diceValue1}></Dice>
-      <Dice diceValue={diceValue2}></Dice>
-
-      <Button
-        action={() => handleSelection("button1")}
-        buttonStyle="lower"
-        buttonTitle="Lower"
-        isSelected={selectedButton === "button1"}
-      ></Button>
-      <Button
-        action={() => handleSelection("button2")}
-        buttonStyle="equal"
-        buttonTitle="Equal To"
-        isSelected={selectedButton === "button2"}
-      ></Button>
-      <Button
-        action={() => handleSelection("button3")}
-        buttonStyle="higher"
-        buttonTitle="Higher"
-        isSelected={selectedButton === "button3"}
-      ></Button>
+      <div className="dices">
+        <Dice diceValue={diceValue1}></Dice>
+        <Dice diceValue={diceValue2}></Dice>
+      </div>
+      <div className="selectionButtons">
+        <Button
+          action={() => handleSelection("button1")}
+          buttonStyle="lower"
+          buttonTitle="Lower"
+          isSelected={selectedButton === "button1"}
+        ></Button>
+        <Button
+          action={() => handleSelection("button2")}
+          buttonStyle="equal"
+          buttonTitle="Equal To"
+          isSelected={selectedButton === "button2"}
+        ></Button>
+        <Button
+          action={() => handleSelection("button3")}
+          buttonStyle="higher"
+          buttonTitle="Higher"
+          isSelected={selectedButton === "button3"}
+        ></Button>
+      </div>
       <Button
         action={rollAllDice}
         buttonStyle="rollDice"
@@ -122,7 +151,6 @@ function App() {
       ></Button>
     </>
   );
-
 }
 
 export default App;
