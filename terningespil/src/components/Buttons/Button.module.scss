@@ -1,4 +1,4 @@
-@use '../../styles/placeholder' as *;
+@use "../../styles/placeholder" as *;
 
 .AllButts {
   position: absolute;
@@ -11,20 +11,25 @@
   margin: 0 30px 0 30px;
 }
 
-.rollDice{
+.rollDice {
   @extend .awakening;
   font-size: 2vw;
   padding: 1vw 4vw;
-color: white;
+  color: white;
   border-radius: 10px;
   border: none;
   margin: auto;
   display: block;
   background-color: rgb(181, 0, 0);
-  margin-top: 3vw
+  margin-top: 3vw;
+
+  &:hover {
+    background-color: white;
+    color: rgb(199, 4, 4);
+  }
 }
 
-.helpButton{
+.helpButton {
   @extend .impacted;
   font-size: 3vw;
   color: red;
@@ -38,7 +43,7 @@ color: white;
   height: 4.5vw;
 }
 
-.lower{
+.lower {
   @extend .awakening;
   font-size: 2.5vw;
   margin: 0 2vw;
@@ -47,9 +52,14 @@ color: white;
   color: rgb(177, 5, 5);
   border-radius: 10px;
   border: none;
+
+  &:hover {
+    background-color: rgb(199, 4, 4);
+    color: white;
+  }
 }
 
-.equal{
+.equal {
   @extend .awakening;
   font-size: 2.5vw;
   margin: 0 2vw;
@@ -58,9 +68,14 @@ color: white;
   color: rgb(177, 5, 5);
   border-radius: 10px;
   border: none;
+
+  &:hover {
+    background-color: rgb(199, 4, 4);
+    color: white;
+  }
 }
 
-.higher{
+.higher {
   @extend .awakening;
   font-size: 2.5vw;
   margin: 0 2vw;
@@ -69,9 +84,14 @@ color: white;
   color: rgb(177, 5, 5);
   border-radius: 10px;
   border: none;
+
+  &:hover {
+    background-color: rgb(199, 4, 4);
+    color: white;
+  }
 }
 
-.selected{
+.selected {
   background-color: rgb(153, 6, 6);
   color: white;
 }

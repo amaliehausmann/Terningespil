@@ -1,31 +1,28 @@
 body {
   margin: 0;
-  background-image:url('../src/assets/background.webp');
+  background-image: url("../src/assets/background.webp");
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 
-  
-.scoreDisplay{
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 3%;
-  width: 100%;
-}
+  .scoreDisplay {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 3%;
+    width: 100%;
+  }
 
-.dices{
-  height: 30vw;
-  padding-top: 3vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
+  .dices {
+    height: 30vw;
+    padding-top: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 
-.selectionButtons{
-  display: flex;
-  justify-content: center;
+  .selectionButtons {
+    display: flex;
+    justify-content: center;
+  }
 }
-}
-
-
