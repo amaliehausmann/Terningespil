@@ -45,7 +45,7 @@ function App() {
     ) {
       setPlayerScore((prevScore) => prevScore + 1);
     }
-    if (selectedButton === "button2" && newValue2 === newValue1) {
+    else if (selectedButton === "button2" && newValue2 === newValue1) {
       setPlayerScore((prevScore) => prevScore + 2);
     } else {
       setDealerScore((prevScore) => prevScore + 1);
