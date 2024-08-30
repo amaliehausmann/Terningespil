@@ -1,6 +1,6 @@
 import "./App.scss";
 import { Modal } from "./components/Modal/Modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./components/Buttons/Button";
 import { Dice } from "./components/Dice/Dice";
 import { Header } from "./components/Header/Header";
@@ -49,6 +49,34 @@ function App() {
     }
   }
 
+  // Win function
+  const [endGameMsg, setEndGameMsg] = useState('');
+  const [isEndModalOpen, setIsEndModalOpen] = useState(false);
+
+
+
+  function checkWinner(){
+    if(playerScore >=5) {
+      setIsEndModalOpen(true);
+      setEndGameMsg('You win!');
+    } else if(dealerScore >= 5){
+      setEndGameMsg('You lose!');
+      setIsEndModalOpen(true);
+    }
+  }
+
+  useEffect(() => {
+    checkWinner();
+  }, [playerScore, dealerScore]);
+
+
+  // reset game
+  function resetGame(){
+    setPlayerScore(0);
+    setDealerScore(0);
+    setIsEndModalOpen(false);
+  }
+
   return (
     <>
       <Header title="Mafia Dice Duel"></Header>
@@ -59,6 +87,10 @@ function App() {
       <Button action={openModal} buttonStyle="helpButton" buttonTitle="?"></Button>
       {isModalOpen && (
         <Modal title="spil regler" closeModal={closeModal}> <Rules></Rules></Modal>
+      )}
+
+      {isEndModalOpen && (
+        <Modal modalStyle='modal' title={endGameMsg} closeModal={resetGame}></Modal>
       )}
 
       <Dice diceValue={diceValue1}></Dice>
@@ -90,6 +122,7 @@ function App() {
       ></Button>
     </>
   );
+
 }
 
 export default App;
